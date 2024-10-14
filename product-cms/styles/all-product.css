@@ -1,5 +1,39 @@
+body {
+    display: flex;
+    flex-direction: row;
+    grid-template-rows: 1fr 2fr;
+}
+
+.view-all-product-side-menu-container {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-header img{
+    margin-left: 5px;
+    padding-top: 7px;
+}
+
+.category_item {
+    display: block;
+    align-content: center;
+    padding-left: 50px;
+}
+
 .view-all-product-content-container {
     padding: 10px;
+    display: block;
+    width: 70%;
 }
 
 .view-content-header {
