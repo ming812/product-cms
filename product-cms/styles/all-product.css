@@ -113,10 +113,13 @@ body {
     min-height: 30px;
     min-width: 50px;
     max-width: 500px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     text-align: center;
     margin-right: 5px;
-    border-color: gray;
+    /* border-color: gray; */
+    background-color: transparent;
+    border:none;
+    border-bottom: 2px solid gray;
     flex-grow: 1;
 }
 
