@@ -1,7 +1,50 @@
 body {
     display: flex;
+    flex-direction: column;
+    grid-template-rows: 1fr 5fr;
+}
+
+.horizontial-grid {
+    display: flex;
     flex-direction: row;
     grid-template-rows: 1fr 2fr;
+}
+.view-all-product-header-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: aquamarine;
+}
+
+.company-logo {
+    height: 10%;
+    width: 10%;
+    padding-left: 10px;
+}
+
+.header-button-container {
+    margin-left: 10px;
+    align-content: center;
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.header-button-container button {
+    background-color: aquamarine;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.header-button-container button:not(:last-child){
+    flex-grow: 1;
+    margin-left: 10px;
+}
+.header-button-container button:last-child {
+    margin-left: auto;
 }
 
 .view-all-product-side-menu-container {
@@ -9,31 +52,69 @@ body {
     flex-direction: column;
     width: 20%;
     justify-content: center;
-    align-items: center;
+    margin-top: 10%;
+    margin-left: 2%;
+    
 }
 
-.filter-header {
+.filter-sorting-container {
+    border: 2px solid gray;
+    min-width: 50px;
+    max-width: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.filter-sorting-header {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
 }
 
-.filter-header img{
+.filter-sorting-header img{
     margin-left: 5px;
-    padding-top: 7px;
 }
 
-.category_item {
-    display: block;
-    align-content: center;
-    padding-left: 50px;
+.filter-sorting-item {
+    display: flex;
+    justify-content: start;
+    padding:5px
+    /* align-content: center; */
+    /* padding-left: 50px; */
 }
 
 .view-all-product-content-container {
     padding: 10px;
-    display: block;
-    width: 70%;
+    display: flexbox;
+    justify-content: center;
+    width: 80%;
+}
+
+.search-container {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container input {
+    min-height: 30px;
+    min-width: 50px;
+    max-width: 500px;
+    border-radius: 50px;
+    text-align: center;
+    margin-right: 10px;
+    border-color: gray;
+    flex-grow: 1;
+}
+
+.search-container img {
+    align-self: center;
+    background-color: gray;
+    min-width: 40px;
+    min-height: 40px;
 }
 
 .view-content-header {
