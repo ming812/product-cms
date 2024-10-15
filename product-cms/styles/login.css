@@ -12,7 +12,7 @@ body {
     padding: 10px;
     text-align: center;
     justify-content: center;
-    background-color: honeydew;
+    background-color: rgb(133, 188, 201);
 }
 
 .login-logo {
@@ -26,6 +26,13 @@ body {
     padding: 10px;
 }
 
+.login-input-container input {
+    min-height: 30px;
+    min-width: 50px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 .login-button-container {
     padding-left: 10px;
     padding-top: 10px;
@@ -34,9 +41,9 @@ body {
 
 .login-button-container button{
     border: none;
-    background-color: yellowgreen;
+    background-color: rgb(227, 236, 240);
     font-weight: bold;
-    border-radius: 25px;
+    border-radius: 20px;
     min-height: 40px;
     min-width: 40px;
     margin-right: 10px;
