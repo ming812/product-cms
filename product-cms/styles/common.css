@@ -1,0 +1,49 @@
+body {
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    background-color: rgb(233, 242, 248);
+}
+
+.common-header-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.company-logo {
+    height: 50%;
+    width: 10%;
+    padding-left: 10px;
+}
+
+.header-button-container {
+    background-color: white;
+    margin-left: 10px;
+    align-content: center;
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.header-button-container button {
+    background-color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: fit-content;
+}
+
+.header-button-container button:first-child{
+    background-color: rgb(133, 188, 201);
+    color: white;
+}
+
+.header-button-container button:not(:last-child){
+    flex-grow: 1;
+    margin-left: 10px;
+}
+.header-button-container button:last-child {
+    margin-left: auto;
+}

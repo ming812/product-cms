@@ -4,11 +4,13 @@
 <head>
     <title>Product List Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/common.css" rel="stylesheet" />
     <link href="styles/all-product.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="view-all-product-header-container">
+    <!--the top menu bar-->
+    <div class="common-header-container">
         <img class="company-logo" src="../product-cms/images/logo.png" />
         <div class="header-button-container">
             <button>Product Overview</button>
@@ -17,8 +19,11 @@
             <button>Logout</button>
         </div>
     </div>
-    <div class="horizontial-grid">
-        <div class="view-all-product-side-menu-container">
+    <!--end of the top menu bar-->
+    <!-- start of content , horizontal grid layout-->
+    <div class="horizontal-grid">
+        <!-- left side of content : Fileter and Sorting-->
+        <div class="side-menu-container">
             <div class="filter-sorting-container">
                 <div class="filter-sorting-header">
                     <p>Category</p>
@@ -81,7 +86,9 @@
 
 
         </div>
-        <div class="view-all-product-content-container">
+        <!--end of left side-->
+        <!-- right side of content : Product List-->
+        <div class="product-content-container">
             <div class="search-container">
                 <input type="text" placeholder="Search Product...">
                 <img src="../product-cms/images/icon_search.svg">
@@ -150,7 +157,9 @@
                 </div>
             </div>
         </div>
+        <!--end of right side-->
     </div>
+    <!-- end of the horizontal grid layout-->
 </body>
 
 </html>
