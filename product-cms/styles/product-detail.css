@@ -24,6 +24,10 @@
     margin: 30px;
 }
 
+.product-content-item label{
+    justify-self: center;
+    align-self: center;
+}
 
 
 .product-content-item textarea{
@@ -31,4 +35,17 @@
     width: 60%;
     height: 100px;
     vertical-align: top;
+}
+
+.rating-container {
+    display: inline-block;
+    align-self: center;
+    justify-content: center;
+    border: 5px solid gray;
+    border-radius: 10px;
+    background-color: goldenrod;
+}
+
+.rating-container img {
+    background-color: gray;
 }
