@@ -1,61 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Product Details Page</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="styles/common.css" rel="stylesheet" />
-        <link href="styles/product-detail.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!--the top menu bar-->
-        <div class="common-header-container">
-            <img class="company-logo" src="../product-cms/images/logo.png" />
-            <div class="header-button-container">
-                <button>Product Overview</button>
-                <button>Transaction Overview</button>
-                <button>User</button>
-                <button>Logout</button>
-            </div>
+
+<head>
+    <title>Product Details Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/common.css" rel="stylesheet" />
+    <link href="styles/product-detail.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--the top menu bar-->
+    <div class="common-header-container">
+        <img class="company-logo" src="../product-cms/images/logo.png" />
+        <div class="header-button-container">
+            <button>Product Overview</button>
+            <button>Transaction Overview</button>
+            <button>User</button>
+            <button>Logout</button>
         </div>
-        <!--end of the top menu bar-->
-        <!-- start of the main content-->
-         <div class="content-border-container">
-            <img class="product-image" src="../product-cms/images/logo.png" />
-            <div class="product-content-container">
-                <div class="product-content-item">
-                    Product Name :
-                    Demo
-                </div>
-                <div class="product-content-item">
-                    Price :
-                    $150
-                </div>
-                <div class="product-content-item">
-                    Discount :
-                    0%
-                </div>
-                <div class="product-content-item">
-                    Category :
-                    Boat-Renting
-                </div>
-                <div class="product-content-item">
-                    Remained qty :
-                    10
-                </div>
-                <div class="product-content-item">
-                    <label for="rating">Rating : </label> 
-                    <div id="rating" class="rating-container">
-                       <img src="images/icon_star.svg"/> 
-                       <img src="images/icon_star.svg"/> 
-                       <img src="images/icon_star.svg"/> 
-                    </div>
-                </div>
-                <div class="product-content-item">
-                    <label for="description">Description : </label> 
-                    <textarea id="description" placeholder="Add description here..."></textarea>
-                </div>
-                
+    </div>
+    <!--end of the top menu bar-->
+    <!-- start of the main content-->
+    <div class="content-border-container">
+        <img class="product-image" src="../product-cms/images/logo.png" />
+        <div class="product-content-container">
+            <div class="product-content-item">
+                <div class="product-content-item-title">Product Name :</div>
+                <div class="product-content-item-data">Demo</div>
             </div>
-         </div>
-    </body>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Price :</div>
+                <div class="product-content-item-data">$150</div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Discount :</div>
+                <div class="product-content-item-data">0%</div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Category :</div>
+                <div class="product-content-item-data">Boat-Renting</div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Remained qty :</div>
+                <div class="product-content-item-data">10</div>
+            </div>
+            <div class="product-content-item">
+                <label for="rating">Rating : </label>
+                <div id="rating" class="rating-container">
+                    <img src="images/icon_star.svg" />
+                    <img src="images/icon_star.svg" />
+                    <img src="images/icon_star.svg" />
+                    <img src="images/icon_star.svg" />
+                    <img src="images/icon_star.svg" />
+                </div>
+            </div>
+            <div class="product-content-item">
+                <label for="description">Description : </label>
+                <textarea id="description" placeholder="Add description here..."></textarea>
+            </div>
+
+            <div class="button-container">
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
 </html>
