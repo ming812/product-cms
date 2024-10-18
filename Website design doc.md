@@ -43,7 +43,8 @@
 )
 
 3.1 Transaction Detail Page
-(
+(   
+    transactionID,
     customerID,
     customer contact(tel.),
     productName,

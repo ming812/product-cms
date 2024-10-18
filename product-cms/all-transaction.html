@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product List Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/common.css" rel="stylesheet" />
+    <link href="styles/all-transaction.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--the top menu bar-->
+    <div class="common-header-container">
+        <img class="company-logo" src="../product-cms/images/logo.png" />
+        <div class="header-button-container">
+            <button>Product Overview</button>
+            <button>Transaction Overview</button>
+            <button>User</button>
+            <button>Logout</button>
+        </div>
+    </div>
+    <!--end of the top menu bar-->
+    <div class="horizontal-grid">
+        <div class="side-menu-container">
+            <div class="filter-sorting-container">
+                <div class="filter-sorting-header">
+                    <p>Category</p>
+                    <img src="../product-cms/images/icon_arrow_down.svg" />
+                </div>
+                <div class="filter-sorting-item">
+                    <label for="category_item_1">
+                        <input type="checkbox" id="category_item_1" name="category_item_1">
+                        Status
+                    </label>
+                </div>
+            </div>
+            <div class="filter-sorting-container">
+                <div class="filter-sorting-header">
+                    <p>Sorting</p>
+                    <img src="../product-cms/images/icon_arrow_down.svg" />
+                </div>
+                <form>
+                    <div class="filter-sorting-item">
+                        <label>
+                            <input type="radio" name="sorting" value="2">
+                            Date
+                        </label>
+                    </div>
+
+                    <div class="filter-sorting-item">
+                        <label>
+                            <input type="radio" name="sorting" value="3">
+                            Status
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+        <!--end of left side-->
+        <!-- right side of content : Product List-->
+        <div class="product-content-container">
+            <div class="search-container">
+                <input type="text" placeholder="Search Product...">
+                <img src="../product-cms/images/icon_search.svg">
+            </div>
+
+            <div class="view-content-header">
+                <div>Trasnaction id</div>
+                <div>Customer id</div>
+                <div>Date</div>
+                <div>Status</div>
+            </div>
+            <div class="separator"></div>
+            <div class="view-content-list-item">
+                <div id="trans_id">12345</div>
+                <div id="customer_id">0000123</div>
+                <div id="date">2024-10-18 14:42:00</div>
+                <div id="status">Pending</div>
+            </div>
+            <div class="view-content-list-item">
+                <div id="trans_id">12346</div>
+                <div id="customer_id">0000112</div>
+                <div id="date">2024-10-18 14:43:00</div>
+                <div id="status">Success</div>
+            </div>
+            <div class="view-content-list-item">
+                <div id="trans_id">12347</div>
+                <div id="customer_id">0000124</div>
+                <div id="date">2024-10-18 14:44:00</div>
+                <div id="status">Cancel</div>
+            </div>
+            <div class="view-content-list-item">
+                <div id="trans_id">12348</div>
+                <div id="customer_id">0000130</div>
+                <div id="date">2024-10-18 14:45:00</div>
+                <div id="status">Success</div>
+            </div>
+            <div class="page-select-container">
+                <img src="images/icon_arrow_left.svg"/>
+                1
+                <img src="images/icon_arrow_right.svg"/>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

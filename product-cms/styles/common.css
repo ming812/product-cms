@@ -9,6 +9,7 @@ body {
     flex-direction: row;
     /* justify-content: center; */
     align-items: center;
+    background-color: white;
 }
 
 .company-logo {
@@ -18,7 +19,6 @@ body {
 }
 
 .header-button-container {
-    background-color: white;
     margin-left: 10px;
     align-content: center;
     display: flex;
