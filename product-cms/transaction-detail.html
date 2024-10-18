@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <title>Product List Page</title>
+    <title>Transaction Detail Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/common.css" rel="stylesheet" />
-    <link href="styles/all-product.css" rel="stylesheet" />
+    <link href="styles/transaction-detail.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -15,12 +15,71 @@
         <div class="header-button-container">
             <button>Product Overview</button>
             <button>Transaction Overview</button>
-            <button>User</button>
+            <div class="dropdown">
+                <button>
+                    Upload
+                    <img src="images/icon_arrow_down.svg" />
+                </button>
+                <div class="dropdown-content">
+                    <a href="../product-cms/all-product.html">Product</a>
+                    <a href="../product-cms/all-transaction.html">Transaction</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>
+                    User
+                    <img src="images/icon_arrow_down.svg" />
+                </button>
+                <div class="dropdown-content">
+                    <a href="../product-cms/all-product.html">Internal</a>
+                    <a href="../product-cms/all-transaction.html">Client</a>
+                </div>
+            </div>
             <button>Logout</button>
         </div>
     </div>
     <!--end of the top menu bar-->
-    
+
+    <div class="product-content-container">
+        <div class="product-item-container">
+            <div class="product-content-item">
+                <div class="product-content-item-title">Transaction ID :</div>
+                <div class="product-content-item-data">Demo</div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Customer ID :</div>
+                <div class="product-content-item-data">$150</div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Customer phone no. :</div>
+                <div class="product-content-item-data">55556666</div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Customer email :</div>
+                <div class="product-content-item-data">demo@gmail.com</div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Product :</div>
+                <div class="product-content-item-data">Boat-Renting@1 , Gear-Renting@3</div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Total Amount :</div>
+                <div class="product-content-item-data">$1000</div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Status :</div>
+                <div class="product-content-item-data">Pending</div>
+            </div>
+        </div>
+
+
+
+        <div class="button-container">
+            <button>Edit</button>
+            <button>Delete</button>
+        </div>
+    </div>
+
 </body>
 
 </html>

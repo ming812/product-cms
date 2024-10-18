@@ -47,6 +47,7 @@
     transactionID,
     customerID,
     customer contact(tel.),
+    customer contact(email),
     productName,
     price,
     stock qty,
