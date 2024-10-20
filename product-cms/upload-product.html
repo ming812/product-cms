@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Upload Product Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/common.css" rel="stylesheet" />
+    <link href="styles/upload-product.css" rel="stylesheet" />
+</head>
+
+<body>
+    <script>
+        // Function to preview the selected image
+        function previewImage(event, nameDisplay, imageDisplay) {
+            const input = event.target;
+
+
+            const fileNameDisplay = document.getElementById(nameDisplay);
+            const previewImageContainer = document.querySelector(`.${imageDisplay}`);
+            fileNameDisplay.textContent = '';
+            previewImageContainer.innerHTML = '';
+
+            const files = Array.from(input.files);
+            files.forEach(file => {
+                console.log(file.name);
+                const reader = new FileReader();
+                reader.onload = function (e) {
+
+                    const image = new Image();
+                    image.src = e.target.result;
+                    previewImageContainer.appendChild(image);
+                    console.log(`previewImageContainer innerHtml = ${previewImageContainer.innerHTML}`);
+
+                    if (fileNameDisplay.textContent == '') {
+                        fileNameDisplay.textContent = file.name;
+                    } else {
+                        fileNameDisplay.textContent += ` , ${file.name}`;
+                    }
+
+
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function displayOther(event) {
+            var otherInput = document.getElementById('otherInput');
+            console.log(`value = ${this.value}`);
+            console.log(`event = ${event.value}`);
+            if (event.value === 'other') {
+                otherInput.classList.remove('hidden');
+            } else {
+                otherInput.classList.add('hidden');
+            }
+        }
+
+    </script>
+
+    <!--the top menu bar-->
+    <div class="common-header-container">
+        <img class="company-logo" src="../product-cms/images/logo.png" />
+        <div class="header-button-container">
+            <button>Product Overview</button>
+            <button>Transaction Overview</button>
+            <div class="dropdown">
+                <button>
+                    Upload
+                    <img src="images/icon_arrow_down.svg" />
+                </button>
+                <div class="dropdown-content">
+                    <a href="../product-cms/all-product.html">Product</a>
+                    <a href="../product-cms/all-transaction.html">Transaction</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>
+                    User
+                    <img src="images/icon_arrow_down.svg" />
+                </button>
+                <div class="dropdown-content">
+                    <a href="../product-cms/all-product.html">Internal</a>
+                    <a href="../product-cms/all-transaction.html">Client</a>
+                </div>
+            </div>
+            <button>Logout</button>
+        </div>
+    </div>
+    <!--end of the top menu bar-->
+
+    <div class="product-content-container">
+        <div class="product-item-container">
+            <div class="product-content-item">
+                <div class="product-content-item-title">Product Name :</div>
+                <div class="product-content-item-data">
+                    <input id="product-name" type="text" />
+                </div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Price :</div>
+                <div class="product-content-item-data">
+                    <input id="price" type="number" />
+                </div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Discount :</div>
+                <div class="product-content-item-data">
+                    <input id="discount" type="number" />
+                </div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Category :</div>
+                <div class="product-content-item-data">
+                    <form>
+                        <select id="category" name="category" onchange="displayOther(this)">
+                            <option value="boat">Boat</option>
+                            <option value="gear">Gear</option>
+                            <option value="package">Package</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </form>
+                    <div id="otherInput" class="hidden , other-container">
+                        <input type="text" id="otherText" name="otherText" placeholder="Input the new Category">
+                    </div>
+                </div>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Stock qty :</div>
+                <div class="product-content-item-data">
+                    <input id="qty" type="number" />
+                </div>
+            </div>
+            <div class="product-content-item">
+                <label for="description">Description : </label>
+                <textarea id="description" placeholder="Add description here..."></textarea>
+            </div>
+            <div class="product-content-item">
+                <div class="product-content-item-title">Main Image :</div>
+                <!-- Input element for uploading image -->
+                <div class="product-upload-image-container">
+
+                    <!-- Button to trigger the file input -->
+                    <button onclick="document.getElementById('image-upload-main').click()" class="upload-btn">Upload
+                        Image</button>
+                    <span class="product-upload-image-name" id="file-name-display-main"></span>
+
+                    <input type="file" id="image-upload-main" accept="image/*" style="display: none;"
+                        onchange="previewImage(event , 'file-name-display-main' , 'image-preview-main')">
+                    <!-- Image preview -->
+                    <div class="image-preview-main"></div>
+                    <!-- <img class="image-preview" id="image-preview-main" src="#" alt="Image Preview"> -->
+
+                </div>
+            </div>
+
+            <div class="product-content-item">
+                <div class="product-content-item-title">Sub Image :</div>
+                <!-- Input element for uploading image -->
+                <div class="product-upload-image-container">
+
+                    <!-- Button to trigger the file input -->
+                    <button onclick="document.getElementById('image-upload-sub').click()" class="upload-btn">Upload
+                        Image</button>
+                    <span class="product-upload-image-name" id="file-name-display-sub"></span>
+
+                    <input type="file" id="image-upload-sub" accept="image/*" style="display: none;"
+                        onchange="previewImage(event , 'file-name-display-sub' ,'image-preview-sub')" multiple>
+                    <!-- Image preview -->
+                    <div class="image-preview-sub"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button>Edit</button>
+        <button>Delete</button>
+    </div>
+    </div>
+
+
+</body>
+
+</html>
