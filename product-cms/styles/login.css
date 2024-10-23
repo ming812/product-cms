@@ -4,6 +4,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('../images/bg-login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .login-input-body-border {
@@ -12,7 +16,7 @@ body {
     padding: 10px;
     text-align: center;
     justify-content: center;
-    background-color: rgb(133, 188, 201);
+
 }
 
 .login-logo {
@@ -41,9 +45,10 @@ body {
 
 .login-button-container button{
     border: none;
-    background-color: rgb(227, 236, 240);
+    background-color: white;
+    color: rgb(24, 172, 236);
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 10px;
     min-height: 40px;
     min-width: 40px;
     margin-right: 10px;

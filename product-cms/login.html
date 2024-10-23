@@ -6,22 +6,65 @@
     <link href="styles/login.css" rel="stylesheet"/>
 </head>
 <body>
-    <!-- <div class="login-input-body"> -->
-        <div class="login-input-body-border">
-            <img class="login-logo" src="../product-cms/images/logo.png">
-            <div class="login-input-container">
-                <input type="text" placeholder="UserName">
-            </div>
-            <div class="login-input-container">
-                <input type="password" placeholder="Password">
-            </div>
-            <div class="login-button-container">
-            <button>Login</button>
-            <button>Reset Password</button>
-            </div>
-            <div class="login-input-body-error">
-            </div>
-        </div>
-    <!-- </div> -->
+<div class="login-input-body-border">
+    <img class="login-logo" src="../product-cms/images/logo.png">
+    <div class="login-input-container">
+        <input id="login-id" type="text" placeholder="UserName">
+    </div>
+    <div class="login-input-container">
+        <input id="password" type="password" placeholder="Password">
+    </div>
+    <div class="login-button-container">
+        <button id="login-button" type="submit">Login</button>
+        <button>Reset Password</button>
+    </div>
+    <div class="login-input-body-error">
+    </div>
+</div>
+
+<script>
+    document.getElementById('login-button').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the form from submitting traditionally
+
+        // Get the values from the input fields
+        const userName = document.getElementById('login-id').value;
+        const password = document.getElementById('password').value;
+
+        // Create the request body
+        const requestBody = {
+            userName: userName,
+            password: password
+        };
+
+        // Set up the options for the fetch API call
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
+        };
+
+        // Make the API call
+        fetch('http://localhost:8080/api/user/login', options)
+            .then(response => response.json()) // Parse the JSON from the response
+            .then(data => {
+                console.log('Success:', data);
+                if (data.statusCode === 0) {
+                    // Redirect to all-product.html
+                    window.location.href = '../product-cms/all-product.html';
+                } else {
+                    // Display error message
+                    console.error('Login failed:', data.message);
+                    // Optionally, display the error message in the page
+                    document.querySelector('.login-input-body-error').textContent = 'Login failed: ' + data.message;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle any errors here
+            });
+    });
+</script>
 </body>
 </html>
