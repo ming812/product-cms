@@ -54,6 +54,72 @@
             }
         }
 
+document.getElementById('product-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const productName = document.getElementById('productName').value;
+    const productPrice = document.getElementById('price').value;
+    const productDiscount = document.getElementById('discount').value;
+    const productCategory = document.getElementById('category').value;
+    const productQty = document.getElementById('qty').value;
+    const productDescription = document.getElementById('description').value;
+    const mainImageFile = document.getElementById('mainImage').files[0];
+    const subImagesFiles = document.getElementById('subImages').files;
+
+        // Convert all images to Base64 strings
+    const readFileAsBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const base64String = reader.result.replace(/^data:image\/(png|jpg|jpeg);base64,/, '');
+                resolve(base64String);
+            };
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    };
+
+     const processImages = async () => {
+        try {
+            const mainImageBase64 = await readFileAsBase64(mainImageFile);
+
+            const subImagesBase64 = [];
+            for (let i = 0; i < subImagesFiles.length; i++) {
+                const base64 = await readFileAsBase64(subImagesFiles[i]);
+                subImagesBase64.push(base64);
+            }
+
+            const productData = {
+                productName: productName,
+                price: productPrice,
+                discount: productDiscount,
+                category:productCategory,
+                qty:productQty,
+                description:productDescription,
+                mainImage: mainImageBase64,
+                subImages: subImagesBase64
+            };
+
+            // Send the data
+            const response = await fetch('/api/product/upload', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(productData)
+            });
+
+            const data = await response.json();
+            console.log('Product uploaded successfully:', data);
+
+        } catch (error) {
+            console.error('Error uploading product:', error);
+        }
+    };
+
+    processImages();
+});
+
     </script>
 
     <!--the top menu bar-->
@@ -88,23 +154,24 @@
     <!--end of the top menu bar-->
 
     <div class="product-content-container">
+        <form id="product-form">
         <div class="product-item-container">
             <div class="product-content-item">
                 <div class="product-content-item-title">Product Name :</div>
                 <div class="product-content-item-data">
-                    <input id="product-name" type="text" />
+                    <input id="productName" type="text" required/>
                 </div>
             </div>
             <div class="product-content-item">
                 <div class="product-content-item-title">Price :</div>
                 <div class="product-content-item-data">
-                    <input id="price" type="number" />
+                    <input id="price" type="number" required/>
                 </div>
             </div>
             <div class="product-content-item">
                 <div class="product-content-item-title">Discount :</div>
                 <div class="product-content-item-data">
-                    <input id="discount" type="number" />
+                    <input id="discount" type="number" required/>
                 </div>
             </div>
             <div class="product-content-item">
@@ -126,7 +193,7 @@
             <div class="product-content-item">
                 <div class="product-content-item-title">Stock qty :</div>
                 <div class="product-content-item-data">
-                    <input id="qty" type="number" />
+                    <input id="qty" type="number" required/>
                 </div>
             </div>
             <div class="product-content-item">
@@ -171,9 +238,10 @@
             </div>
         </div>
         <div class="button-container">
-            <button>Edit</button>
-            <button>Delete</button>
+            <button>Cancel</button>
+            <button type="submit">Submit</button>
         </div>
+        </form>
     </div>
 
     
